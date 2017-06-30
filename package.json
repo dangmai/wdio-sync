@@ -16,6 +16,7 @@
     "test:ci": "run-s clean eslint test:cover",
     "test:unit": "mocha --compilers js:babel-core/register --colors --require should --reporter dot test/**/*.js",
     "test:cover": "babel-node ./node_modules/.bin/isparta cover --include './*.js' _mocha -- --require should",
+    "prepare": "npm prune && run -s build",
     "prepublish": "npm prune && run-s build test",
     "watch": "npm run compile -- --watch"
   },
